@@ -27,6 +27,10 @@ axios
 	.get("https://lambda-times-api.herokuapp.com/articles")
 	.then((res) => {
 		const { bootstrap, javascript, jquery, node, technology } = res.data.articles
+		const container = []
+		container.push(bootstrap, javascript, jquery, node, technology)
+		const flatten_array = container.flat()
+		console.log(flatten_array)
 
 		bootstrap.map((b) => {
 			document.querySelector(".cards-container").append(cards(b))
